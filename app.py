@@ -7,7 +7,7 @@ app = Flask(__name__)
 # Загрузка сохранённой модели
 try:
     print("Загрузка модели...")
-    model = joblib.load('/Users/aryurkov/Documents/1ml/model.pkl')
+    model = joblib.load('model.pkl')
     print("Модель успешно загружена!")
 except Exception as e:
     print(f"Ошибка загрузки модели: {e}")
