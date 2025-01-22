@@ -5,9 +5,9 @@ from sklearn.linear_model import LinearRegression
 import joblib
 
 # Загрузка данных
-data = pd.read_csv('/Users/aryurkov/Documents/1ml/flats_moscow.csv')
+data = pd.read_csv('flats_moscow.csv')
 
-# Удаляем первый столбец, который является индексом, если он есть
+# Удаляем первый столбец, который является индексом
 data = data.drop(columns=['Unnamed: 0'], errors='ignore')  # 'errors="ignore"' игнорирует ошибку, если столбец отсутствует
 
 # Обработка данных и нормализация
@@ -31,7 +31,7 @@ model = LinearRegression()
 model.fit(X_train, y_train)
 
 # Сохранение модели в файл
-model_path = '/Users/aryurkov/Documents/1ml/model.pkl'
+model_path = 'model.pkl'
 joblib.dump(model, model_path)
 
 # Выводим сообщение об успешном сохранении модели
