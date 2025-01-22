@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Предсказание стоимости квартиры</title>
+</head>
+
+<body>
+    <h1>Шаблон загружен успешно!</h1>
+    {% if prediction is not none %}
+    <h2>Предсказание: {{ prediction }}</h2>
+    {% else %}
+    <h2>Введите данные для предсказания</h2>
+    {% endif %}
+    <form method="POST">
+        <label for="totsp">Общая площадь:</label>
+        <input type="text" name="totsp" required><br>
+        <label for="livesp">Жилая площадь:</label>
+        <input type="text" name="livesp" required><br>
+        <label for="kitsp">Площадь кухни:</label>
+        <input type="text" name="kitsp" required><br>
+        <label for="dist">Расстояние от центра (км):</label>
+        <input type="text" name="dist" required><br>
+        <label for="metrdist">Расстояние до метро (мин):</label>
+        <input type="text" name="metrdist" required><br>
+        <label for="walk">Пешком (1) или на транспорте (0):</label>
+        <input type="text" name="walk" required><br>
+        <label for="brick">Тип дома (1 — кирпичный, 0 — другой):</label>
+        <input type="text" name="brick" required><br>
+        <label for="floor">Этаж (1 — не первый и не последний, 0 — иначе):</label>
+        <input type="text" name="floor" required><br>
+        <label for="code">Код района:</label>
+        <input type="text" name="code" required><br>
+        <button type="submit">Предсказать</button>
+    </form>
+</body>
+
+</html>
